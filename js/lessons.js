@@ -849,3 +849,86 @@ div.innerHTML = '<h1>Hello world</h1>'; //можем вставить как п�
 
 div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>'); 
 */
+
+
+
+
+//          Урок 31. События и их обработчики
+
+// Чтобы сработало событие, мы должны назначить обработчик событий.Обработчик это функция ,которая срабатывает как только событие произошло
+
+
+/* btns[0].addEventListener('click', () => {
+    if (!btns[1].classList.contains('red')) {
+        btns[1].classList.add('red');
+    } else {
+        btns[1].classList.remove('red');
+    }
+});  */
+/* 
+wrapper.addEventListener('click', (event) => {
+    if (event.target && event.target.tagName == 'BUTTON') {
+        console.log('Hello');
+    }
+});
+ */
+//      Назначаем действие на одну кнопку, первую на странице
+
+/* const btn = document.querySelector('button');
+
+btn.onclick = function() {  //onclick - свойство дом дерево УСТАРЕВШИЙ КОД
+    alert('Hello');
+}; 
+
+btn.addEventListener('click', () => {  //'click' - название события!
+    alert('Hello');
+});
+ */
+
+//      Назначаем действие на все кнопи с помощью метода querySelectorAll, но тк это псевдомассив, делаем это через forEach, перебирая и назначая действие на каждую кнопку
+
+/* 
+const deleteElement = (e) => {
+    console.log(e.target);
+}; 
+
+const btns = document.querySelectorAll('button');
+
+btns.forEach(item => {
+    item.addEventListener('click', deleteElement, {once: true}); // {once: true}- Объект options, который определяет характеристики объекта, прослушивающего событие
+});
+ */
+
+/* const link = document.querySelector('a');
+
+link.addEventListener('click', function(event) {
+    event.preventDefault(); //отменяем действие браузера, чтобы назначить свое
+
+    console.log(event.target);
+}); */
+
+
+//          УРОК 32. Навигация по DOM - элементам, data-атрибуты, преимущество for_of
+/* 
+console.log(document.querySelector('#btn').parentNode.parentNode); //получаем элемент по id
+
+
+console.log(document.querySelector('[data-current="3"]').nextElementSibling); //получаем следующего соседа для data-атрибута или любого другого
+
+for (let node of document.body.childNodes) {
+    if (node.nodeName == '#text') {
+        continue;
+    }
+    console.log(node);
+} */
+
+
+
+//          УРОК 37. ClassList и делигирование событий
+
+
+//console.log(btns[0].classList.length);  //если хотим узнать сколько склассов у тега
+//console.log(btns[0].classList.item(0));  //позволяет получить класс, который находится по определенным индексом
+//console.log(btns[0].classList.add('red')); //добавляем класс
+//console.log(btns[0].classList.remove('blue')); //удаляем класс
+//console.log(btns[0].classList.toggle('blue')); //если класса не было - добавляет, если был- удаляет 

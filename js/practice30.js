@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         checkbox = addForm.querySelector('[type="checkbox"]');
 
     
-
+    /* 
     adv.remove()  //Так нельзя, тк мы выбрали метод querySelectorAll, просто удалить элементы мы не можем, нужно удалить поочередно через метод forEarch
-
+    */
     const deleteAdv = (arr) => {
         arr.forEach(item => {
             item.remove();
