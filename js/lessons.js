@@ -920,7 +920,7 @@ for (let node of document.body.childNodes) {
         continue;
     }
     console.log(node);
-} */
+} */ 
 
 
 
@@ -931,4 +931,90 @@ for (let node of document.body.childNodes) {
 //console.log(btns[0].classList.item(0));  //позволяет получить класс, который находится по определенным индексом
 //console.log(btns[0].classList.add('red')); //добавляем класс
 //console.log(btns[0].classList.remove('blue')); //удаляем класс
-//console.log(btns[0].classList.toggle('blue')); //если класса не было - добавляет, если был- удаляет 
+//console.log(btns[0].classList.toggle('blue')); //если класса не было - добавляет, если был- удаляет
+
+
+//          УРОК 39. Скрипты и время их выполнения
+
+//setTimeout - код для запуска операции через какое -то время (2000 милисекнду, это 2 сек)
+//setInterval - код для запуска операции с какой то переодичностью
+
+/* const btn = document.querySelector('.btn');
+let timerId,
+    i = 0;
+
+function myAnimation() {
+    const elem = document.querySelector('.box');
+    let pos = 0;
+
+    const id = setInterval(frame, 10);
+    function frame() {
+        if (pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
+
+
+btn.addEventListener('click', myAnimation); */
+
+
+/* btn.addEventListener('click', () => {
+    // timerId = setTimeout(logger, 2000); 
+    timerId = setInterval(logger, 2000);
+});
+ */
+
+/* setTimeout(logger, 2000)  */
+
+/* function logger () {
+    if (i === 3) {
+        clearInterval(timerId);//оперция останавливает setInterval или setTimeout 
+    }
+    console.log('text');
+    i++;
+}
+*/
+
+//  этой фукнции setTimeout будет ждать 0,5с после выполнения всех действий функции
+/* let id = setTimeout(function log() {
+    console.log('Hello');
+    id = setTimeout(log, 500);
+}, 500); */ 
+
+
+//          УРОК 40. Работа с датами
+//Для измерения времени работы функции, как быстро она работает и сравнить с другой функцией. Вывод текущей даты (таймер или часы). Хранение времени создания какого либо документы
+
+//const now = new Date(); //получим в консоль текущую дату и время 
+//const now = new Date('2022-05-04'); //передаем дату в виде строки, в консоль получим эту дату без времени 
+//const now = new Date(2022, 5, 4, 20); //так мы передаем определенные параметры(числа состоящие из одного символа указываем без нуля), в консоле получим 2020-06-01Т17:00:00 - 06месяц потому что месяцы считаются с нуля, 17 часов. а не 20 из-за часовой пояс
+//new Date.parse('2022-05-04');
+
+//Методы объекта Date - получение компонентов
+/* console.log(now.getFullYear());
+console.log(now.getMonth()); //нумерация месяца начинается с 0
+console.log(now.getDate()); //метод чтобы узнать дату в месяце
+console.log(now.getDay()); //метод чтобы узнать номер дня недели, начинается с воскресенья - 0 день, суббота - 6 день
+console.log(now.getUTCHours());//время по UTC 
+console.log(now.getTimezoneOffset()); //разница в минутах между UTC и местным временем
+console.log(now.getTime());//количетсво милисекунд, которые прошли с 1970г */
+
+/* console.log(now.setHours(18));
+console.log(now); */
+
+/* 
+let start = new Date();
+
+for (let i = 0; i < 100000; i++) {
+    let some = i ** 3;
+}
+
+let end = new Date();
+
+alert(`Цикл отработал за ${end - start} миллисекунд`); 
+*/
