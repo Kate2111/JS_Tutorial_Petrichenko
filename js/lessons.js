@@ -1178,3 +1178,58 @@ function calcOrDouble(number, basis = 2) {
 
 calcOrDouble(3);
  */
+
+
+//          Урок 51. JSON формат передачи данных, глубокое клонирование объектов
+
+//   JSON - текстовый формат для обмена данными, используется для передачи и хранения. Это набор пар: "ключ"="значение" (всегда заключается в кавычки)
+
+/* 
+const person = {
+    name: 'Alex',
+    tel: '+744444444'
+}
+
+console.log(JSON.stringify(person)); //превращает объекты js в формат json
+
+console.log(JSON.parse(JSON.stringify(person))); //превращает формат json в объекты js
+
+ */
+/* 
+const persone = {
+    name: 'Alex',
+    tel: '+744444444',
+    parents: {
+        mom: 'Olga',
+        dad: 'Mike'
+    }
+}
+
+const clone = JSON.parse(JSON.stringify(persone));
+clone.parents.mom = 'Ann';  // при клонировании объекта изначальный объект остается без изменений
+console.log(persone);
+console.log(clone);
+ */
+//Ответ консоли ниже
+
+/* 
+//это const persone
+{ 
+    name: 'Alex',
+    tel: '+744444444',
+    parents: { mom: 'Olga', dad: 'Mike' }
+  }
+
+//это const clone
+  {
+    name: 'Alex',
+    tel: '+744444444',
+    parents: { mom: 'Ann', dad: 'Mike' }
+  } 
+*/
+
+
+
+//          Урок 51. AJAX и общение с сервером
+
+//Это ассинхронное(без перезагрузки страницы) выполнение задач и общение с сервером
