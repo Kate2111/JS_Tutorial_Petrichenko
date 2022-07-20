@@ -1290,3 +1290,46 @@ Promise.rase([test(1000), test(2000)]).then(() => {
     console.log('All');
 }); // метод rase выполняет свои действия только когда первый Promise правильно отработал 
 */
+
+
+//          Урок 57. Методы перебора массивов
+/* 
+filter //фильмтруем элементы внутри массива
+
+const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemar'];
+
+const shortNames = names.filter(function(name) {
+    return name.length < 5;
+});
+
+console.log(shortNames); 
+*/
+/* 
+map //позволяет трансформировать каждый элементы внутри массива, выдает новый массив из измененных элементов
+
+const answers = ['IvAn', 'AnnA', 'Hello'];
+
+const result = answers.map(item => item.toLowerCase());
+
+console.log(result); 
+*/
+/* 
+every/some //возвращают булиновое значение. some - переберается массив, если хотя бы один элемент подходит, возвращает true. Every - возвращает true, если ВСЕ элементы подходят 
+
+const some = [4, 'wks', 'emlxsm'];
+
+//console.log(some.some(item => typeof(item) === 'number'));
+//console.log(some.every(item => typeof(item) === 'number')); 
+*/
+
+reduce
+
+const arr = [4, 5, 1, 3, 2, 6];
+                    // 0       4
+                    // 4       5
+                    // 9       1
+                    // 10      3
+                    // 21
+const res = arr.reduce((sum, current) => sum + current);
+
+console.log(res);
