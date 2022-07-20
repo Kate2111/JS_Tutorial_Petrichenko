@@ -1321,8 +1321,8 @@ const some = [4, 'wks', 'emlxsm'];
 //console.log(some.some(item => typeof(item) === 'number'));
 //console.log(some.every(item => typeof(item) === 'number')); 
 */
-
-reduce
+/* 
+reduce //этот метод схлопывает весь масив
 
 const arr = [4, 5, 1, 3, 2, 6];
                     // 0       4
@@ -1333,3 +1333,20 @@ const arr = [4, 5, 1, 3, 2, 6];
 const res = arr.reduce((sum, current) => sum + current);
 
 console.log(res);
+ */
+/* 
+//Пример
+
+const obj = {
+    ivan: 'persone',
+    ann: 'persone',
+    dog: 'animal',
+    cat: 'animal'
+};
+
+const newArr = Object.entries(obj) // объект переводим в формат массива
+.filter(item => item[1] === 'persone') //сначала отбираем каждый второй элемент массива который равен persone
+.map(item => [item[0]]); // теперь из полученного массива ['ivan', 'persone'] отбираем кажый первый элемент
+
+console.log(newArr); 
+*/
